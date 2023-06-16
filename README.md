@@ -1,8 +1,20 @@
 ## Q + A
-1. How do we assign a value to a variable?
+1. How do we assign a value to a variable? 
+ we use the assignment operator ('=') ex: let variableName = value;
+-----------------------
 2. How do we change the value of a variable?
+using the assignment operator (=). This overwrites the current value of the variable with the new value. For example: variableName = newValue;
+-------------------------
 3. How do we assign an existing variable to a new variable?
+use the assignment operator (=) along with the existing variable's name. This copies the value of the existing variable to the new variable. For example: let newVariable = existingVariable;
+----------------------
 4. Remind me, what are declare, assign, and define?
+
+Declare: It is the process of introducing a new variable to the program. When you declare a variable using the var, let, or const keyword, you specify its name, which allows the program to recognize and allocate memory for it. For example: let variableName; 
+
+Assign: It is the process of giving a value to a variable. After declaring a variable, you can assign a value to it using the assignment operator (=). For example: variableName = value;
+
+Define In the context of JavaScript, the term "definition" is often used interchangeably with "declaration" or "assignment" and refers to the process of declaring or assigning a value to a variable.
 
 Declare is to let js know that there is a variable `let a;`
 To assign a value to the variable. I need to use `=`.
@@ -13,6 +25,8 @@ For example: `let a = 0`
 5. What is pseudocoding and why should you do it?
 
 Pseudocoding is writing code in plain spoken language that humans can understand.
+Pseudocoding is the practice of writing out the logical steps or algorithm of a program in human-readable language before writing the actual code in a specific programming language. It is a way to plan and outline the solution to a problem or the structure of a program without worrying about the syntax or specific details of the programming language.
+
 
 It's important because it allows you to write the logic and steps of the you want to accomplish in code without worrying about the rigid syntax.
 
@@ -49,9 +63,9 @@ Using the provided variable definitions, replace the blanks so that all log stat
   `const e = 'Kevin';`
  
 
-  `console.log(a __ b);`
-  `console.log(c __ d);`
-  `console.log('Name' __ 'Name');`
+  `console.log(a < b);`
+  `console.log(c > d);`
+  `console.log('Name' =='Name');`
   
   ### // FOR THE NEXT TWO, USE ONLY && OR ||
 
@@ -77,7 +91,7 @@ Write code that will print out "Here are the keys!", if the age is 16 years or o
 
 ## Loops
 
-Remember: USE letwhen you initialize your for loops!
+Remember: USE let when you initialize your for loops!
 
 This is GOOD: `for(let i = 0; i < 100; i++)`
 
@@ -142,8 +156,13 @@ Check your work! Your `bank_account` should have $10,100 in it.
 
 ### A. Talk about it:
 What are the things in an array called?
+The things in an array are called elements or items.
+
 Do Arrays guarantee those things will be in order?
+yes Arrays guarantee that everything will be in order using index which starts from 0.
+
 What real-life thing could you model with an array?
+student grades, names of people, list of songs , shopping list
 
 
 
@@ -158,9 +177,19 @@ Given the following array `const randomThings = [1, 10, "Hello", true]`
 
 - How do you access the 1st element in the array?
 
+const randomThings = [1, 10, "Hello", true];
+const firstElement = randomThings[0];
+console.log()
+
 - Change the value of `"Hello"` to `"World"`
 
+const randomThings = [1, 10, "Hello", true];
+randomThings[2] = "World";
+console.log(randomThings);
+
 - Check the value of the array to make sure it updated the array using `console.log()`
+
+
 
 
 ### D. Change values
@@ -170,7 +199,10 @@ What would you write to access the 3rd element of the array?
 Change the value of "Github" to "Octocat"
 Add a new element, "Cloud City" to the array
 
+const ourClass = ["Salty", "Zoom", "Sardine", "Slack", "Github"];
 
+const thirdElement = ourClass[2];
+console.log(thirdElement);
 
 ### E. Mix It Up
 
@@ -185,6 +217,7 @@ Given the following array: `const myArray = [5, 10, 500, 20]`
 - Reverse this array using `Array.prototype.reverse()`. 
 - Did you mutate the array? What does mutate mean? Did the .reverse()method return anything?
 
+yes the array was mutated. the index places were reversed backward. 
 
 
 ### F. Biggie Smalls
@@ -202,7 +235,7 @@ Write an `if ... else` statement that:
 
 Write an `if ... else if ... else` statement:
 
-1. console.log()little numberif the number entered is less than 5.
+1. console.log()little number if the number entered is less than 5.
 2. If the number entered is more than 10, log big number.
 3. Otherwise, log "monkey".
 
@@ -216,7 +249,7 @@ const kristynsCloset = [
   "left shoe",
   "cowboy boots",
   "right sock",
-  "GA hoodie",
+  "GA hoodie",=
   "green pants",
   "yellow knit hat",
   "marshmallow peeps"
@@ -257,21 +290,41 @@ const thomsCloset = [
 
 1. Using bracket notation to access items in kristynsCloset, log the sentence "Kristyn is rocking that " + the third item in Kristyn's closet + " today!" to the console.
 
+// 1. Accessing Kristyn's closet
+console.log("Kristyn is rocking that " + kristynsCloset[2] + " today!");
 
 2. Kristyn just bought some sweet shades! Add "raybans"to her closet after "yellow knit hat".
 Kristyn spilled coffee on her hat... modify this item to read "stained knit hat"instead of yellow.
 
+kristynsCloset.splice(6, 0, "raybans");
+kristynsCloset[5] = "stained knit hat";
+console.log(kristynsCloset);
+
 3. Put together an outfit for Thom! Using bracket notation, access the first element in Thom's shirts array.
 
+const thomShirt = thomsCloset[0][0];
+
 **In the same way, access one item from Thom's pants array.**
+const thomPants = thomsCloset[1][1];
 
 - Access one item from Thom's accessories array.
+const thomAccessory = thomsCloset[2][2];
+
+
 - Log a sentence about what Thom's wearing. 
 *Example:* "Thom is looking fierce in a grey button-up, jeans and wool scarf!"
 
+const thomShirt = thomsCloset[0][0];
+const thomPants = thomsCloset[1][1];
+const thomAccessory = thomsCloset[2][2];
+
+console.log("Thom is looking fierce in a " + thomShirt + ", " + thomPants + " and " + thomAccessory + "!");
+
+
 - Get more specific about what kind of PJs Thom's wearing this winter. Modify the name of his PJ pants to Footie Pajamas.
 
-
+thomsCloset[1][2] = "Footie Pajamas";
+console.log(thomsCloset);
 
 ## IV. Functions
 
@@ -294,6 +347,7 @@ Write a function `printCoolthat` accepts one parameter, `name`, as an argument. 
 
 `console.log(printCool("Captain Reynolds"));`
 `=> "Captain Reynolds is cool";`
+
 
 
 
